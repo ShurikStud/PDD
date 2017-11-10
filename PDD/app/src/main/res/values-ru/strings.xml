@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ПДД</string>
+    <string name="activity_splash_text_view">Правила дорожного движения</string>
+    <string name="activity_login_text_view_login">Логин:</string>
+    <string name="activity_login_edit_text_login">имя пользователя</string>
+    <string name="activity_login_text_view_password">Пароль:</string>
+    <string name="activity_login_edit_text_password">введите пароль</string>
+    <string name="activity_login_button_signin">Войти</string>
+    <string name="activity_login_button_signup">Зарегистрироваться</string>
+    <string name="activity_login_check_box">Запомнить пользователя</string>
+    <string name="activity_login_label">Авторизация</string>
+    <string name="activity_signup_label">Новый пользователь</string>
+</resources>

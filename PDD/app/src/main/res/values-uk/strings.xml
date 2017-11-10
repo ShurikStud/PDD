@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ПДР</string>
+    <string name="activity_splash_text_view">Правила дорожнього руху</string>
+    <string name="activity_login_text_view_login">Логiн:</string>
+    <string name="activity_login_edit_text_login">iм\'я користувача</string>
+    <string name="activity_login_text_view_password">Пароль:</string>
+    <string name="activity_login_edit_text_password"></string>
+    <string name="activity_login_button_signin">Увiйти</string>
+    <string name="activity_login_button_signup">Зареэструватись</string>
+    <string name="activity_login_check_box">Запам\'ятати користувача</string>
+    <string name="activity_login_label">Авторизация</string>
+    <string name="activity_signup_label">Новий користувач</string>
+</resources>
