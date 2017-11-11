@@ -11,4 +11,14 @@
     <string name="activity_login_check_box">Запомнить пользователя</string>
     <string name="activity_login_label">Авторизация</string>
     <string name="activity_signup_label">Новый пользователь</string>
+    <string name="activity_signup_text_view_fio">ФИО</string>
+    <string name="activity_signup_text_view_login">Логин:</string>
+    <string name="activity_signup_edit_text_login">имя пользователя</string>
+    <string name="activity_signup_text_view_password">Пароль:</string>
+    <string name="activity_signup_edit_text_password">введите пароль</string>
+    <string name="activity_signup_text_view_repassword">Пароль (повтор):</string>
+    <string name="activity_signup_edit_text_repassword">введите пароль</string>
+    <string name="activity_signup_edit_text_fio">Фамилия, имя</string>
+    <string name="activity_signup_button_ok">Ок</string>
+    <string name="activity_signup_button_back">&lt;</string>
 </resources>

@@ -11,4 +11,8 @@
     <string name="activity_login_check_box">Запам\'ятати користувача</string>
     <string name="activity_login_label">Авторизация</string>
     <string name="activity_signup_label">Новий користувач</string>
+    <string name="activity_signup_text_view_fio">ФIП</string>
+    <string name="activity_signup_edit_text_fio">Прiзвище, iм\'я</string>
+    <string name="activity_signup_button_ok">Ок</string>
+    <string name="activity_signup_button_back">&lt;</string>
 </resources>
