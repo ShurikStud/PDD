@@ -64,11 +64,16 @@ public class Utils {
 
         String json = sharedPreferences.getString(USERLIST, "");
 
-        String[] users =  gson.fromJson(json, String[].class);
+        String[] users = null;
 
-        for (String login:users ) {
-            json = sharedPreferences.getString(USER_PREFIX + login, "");
-            result.add(gson.fromJson(json, UserPDD.class));
+        if ( !json.isEmpty())
+            users =  gson.fromJson(json, String[].class);
+
+        if (!(users == null)) {
+            for (String login : users) {
+                json = sharedPreferences.getString(USER_PREFIX + login, "");
+                result.add(gson.fromJson(json, UserPDD.class));
+            }
         }
 
         return result;

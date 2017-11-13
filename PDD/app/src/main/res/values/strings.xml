@@ -20,4 +20,11 @@
     <string name="activity_signup_edit_text_fio">input name, first name</string>
     <string name="activity_signup_button_ok">ok</string>
     <string name="activity_signup_button_back">&lt;</string>
+    <string name="activity_singup_dialog_button_ok">ok</string>
+    <string name="activity_signup_dialog_message_name">input name!</string>
+    <string name="activity_signup_dialog_message_login">input login!</string>
+    <string name="activity_signup_dialog_message_password">input password!</string>
+    <string name="activity_signup_dialog_message_repassword">input repassword!</string>
+    <string name="activity_signup_dialog_message_wrong_password">The passwords are different</string>
+    <string name="activity_login_error_login">incorrect login or password</string>
 </resources>

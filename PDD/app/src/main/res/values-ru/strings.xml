@@ -21,4 +21,7 @@
     <string name="activity_signup_edit_text_fio">Фамилия, имя</string>
     <string name="activity_signup_button_ok">Ок</string>
     <string name="activity_signup_button_back">&lt;</string>
+    <string name="activity_singup_dialog_button_ok">Ок</string>
+    <string name="activity_signup_dialog_message_name">Введите Имя и Фамилию</string>
+    <string name="activity_login_error_login">неправильный логин или пароль</string>
 </resources>

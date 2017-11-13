@@ -15,4 +15,6 @@
     <string name="activity_signup_edit_text_fio">Прiзвище, iм\'я</string>
     <string name="activity_signup_button_ok">Ок</string>
     <string name="activity_signup_button_back">&lt;</string>
+    <string name="activity_singup_dialog_button_ok">Ок</string>
+    <string name="activity_signup_dialog_message_name">Введить iм\'я та Побатьковi</string>
 </resources>

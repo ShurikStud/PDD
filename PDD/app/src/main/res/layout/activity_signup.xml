@@ -39,7 +39,7 @@
             <EditText
                 android:id="@+id/activity_signup_edit_text_fio"
                 android:textSize="20sp"
-                android:text="@string/activity_signup_edit_text_fio"
+                android:hint="@string/activity_signup_edit_text_fio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
