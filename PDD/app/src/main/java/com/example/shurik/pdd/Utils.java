@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 import com.example.shurik.pdd.users_PDD.UserPDD;
 import com.google.gson.Gson;
+import com.google.gson.annotations.JsonAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +19,12 @@ import java.util.List;
 public class Utils {
 
     private static final String USER_PDD_ENTITY = "users_pdd_entity";
+    private static final String USER_PDD_REMEMBER = "users_pdd_remember";
     private static final String USERLIST = "user_list";
     private static final String USER_PREFIX = "USER_";
 
 
-    public static void saveUsersPDD(Context context, List<UserPDD> listUsersPDD){
+    public static void saveUsersPDD(Context context, List<UserPDD> listUsersPDD, boolean remember, UserPDD currentUser){
 
         // инициализируем общие объекты для сохранения настроек
         SharedPreferences sharedPreferences = context.getSharedPreferences(USER_PDD_ENTITY, Context.MODE_PRIVATE);
@@ -43,6 +45,18 @@ public class Utils {
         String json = gson.toJson(users);
 
         editor.putString(USERLIST, json);
+
+        if (remember == true) {
+
+            json    = gson.toJson(currentUser.getLogin());
+
+        } else {
+
+            json    = gson.toJson("");
+
+        }
+
+        editor.putString(USER_PDD_REMEMBER, json);
 
         editor.commit();
 
@@ -77,6 +91,21 @@ public class Utils {
         }
 
         return result;
+    }
+
+    public static String loadCurrentUser(Context context){
+
+        SharedPreferences sharedPreferences = context.getSharedPreferences(USER_PDD_ENTITY, Context.MODE_PRIVATE);
+        Gson gson   = new Gson();
+
+        String json = sharedPreferences.getString(USER_PDD_REMEMBER, "");
+
+        String login    = "";
+
+        if (!json.isEmpty())
+            login   = gson.fromJson(json, String.class);
+
+        return login;
     }
 
 }

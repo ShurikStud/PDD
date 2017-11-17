@@ -27,4 +27,21 @@
     <string name="activity_signup_dialog_message_repassword">input repassword!</string>
     <string name="activity_signup_dialog_message_wrong_password">The passwords are different</string>
     <string name="activity_login_error_login">incorrect login or password</string>
+    <string name="activity_main_button_courses">courses</string>
+    <string name="activity_main_button_exam">exam</string>
+    <string name="activity_main_button_reports">reports</string>
+    <string-array name="courses_array">
+        <item>1;Курс 1</item>
+        <item>2;Курс 2</item>
+        <item>3;Курс 3</item>
+        <item>4;Курс 4</item>
+        <item>5;Курс 5</item>
+        <item>6;Курс 6</item>
+        <item>7;Курс 7</item>
+        <item>8;Курс 8</item>
+        <item>9;Курс 9</item>
+        <item>10;Курс 10</item>
+        <item>11;Курс 11</item>
+    </string-array>
+
 </resources>

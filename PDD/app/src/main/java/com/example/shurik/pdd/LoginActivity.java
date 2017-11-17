@@ -58,6 +58,15 @@ public class LoginActivity extends AppCompatActivity{
         login.setContext(this);
         login.loadUsers();
 
+        if (! (login.getCurrentUser() == null)){
+
+            editTextLogin.setText(login.getCurrentUser().getLogin());
+            editTextPassword.setText(login.getCurrentUser().getPassword());
+            checkBox.setChecked(true);
+
+        }
+
+
     }
 
     private class MyListener implements View.OnClickListener{
@@ -75,6 +84,11 @@ public class LoginActivity extends AppCompatActivity{
                     if (login.signin(loginStr, passwordStr)){
                         //TODO успешно авторизовались
 
+                        if (checkBox.isChecked())
+                            login.setCurrentUser(loginStr);
+
+                        login.saveUsers();
+
                         startActivity(new Intent(activity, MainActivity.class));
 
                     } else {
@@ -86,6 +100,9 @@ public class LoginActivity extends AppCompatActivity{
                 case R.id.activity_login_button_signup:
                     startActivity(new Intent(activity, SignupActivity.class));
                     break;
+
+                case R.id.activity_login_check_box:
+
             }
 
         }
@@ -95,32 +112,6 @@ public class LoginActivity extends AppCompatActivity{
     private void showErrorLogin(){
 
         Toast.makeText(LoginActivity.this, R.string.activity_login_error_login, Toast.LENGTH_LONG).show();
-
-//        final Data data   = new Data();
-//        final DisplayData displayData = new DisplayData(data);
-//
-//        Thread thread = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        //displayData.update("new string");
-//                        data.setData("new string");
-//                        Toast.makeText(LoginActivity.this, "Toast", Toast.LENGTH_LONG).show();
-//                        //displayData.removeObserverFromData();
-//                    }
-//                });
-//            }
-//        });
-//
-//        try {
-//            Thread.sleep(5000);
-//        }catch (InterruptedException e){
-//            e.printStackTrace();
-//        }
-//
-//        thread.start();
 
     }
 

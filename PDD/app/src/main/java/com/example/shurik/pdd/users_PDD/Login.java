@@ -15,6 +15,7 @@ import java.util.List;
 
     private List<UserPDD> listUsers;
     private UserPDD currentUser = null;
+    private boolean remember = false;
     Context context;
 
     private Login(){ Init();} // конструктор делаем приватным - невозможно будет вызвать
@@ -34,6 +35,7 @@ import java.util.List;
     public void loadUsers(){
 
         listUsers = Utils.loadUsersPDD(context);
+        setCurrentUser(Utils.loadCurrentUser(context));
 
     }
 
@@ -66,9 +68,9 @@ import java.util.List;
 
     }
 
-    private void saveUsers(){
+    public void saveUsers(){
 
-        Utils.saveUsersPDD(context, listUsers);
+        Utils.saveUsersPDD(context, listUsers, remember, currentUser);
 
     }
 
@@ -96,5 +98,32 @@ import java.util.List;
 
     }
 
+    public UserPDD getCurrentUser(){
+
+        return currentUser;
+
+    }
+
+    public void setCurrentUser(String login){
+
+        UserPDD user    = findUser(login);
+
+        if (!(user == null))
+            currentUser = user;
+
+    }
+
+    private UserPDD findUser(String login){
+
+
+        for (UserPDD user: listUsers) {
+            if (user.getLogin() == login)
+                return user;
+
+        }
+
+        return null;
+
+    }
 
 }

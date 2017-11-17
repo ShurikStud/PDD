@@ -24,4 +24,7 @@
     <string name="activity_singup_dialog_button_ok">Ок</string>
     <string name="activity_signup_dialog_message_name">Введите Имя и Фамилию</string>
     <string name="activity_login_error_login">неправильный логин или пароль</string>
+    <string name="activity_main_button_courses">курсы</string>
+    <string name="activity_main_button_exam">тест</string>
+    <string name="activity_main_button_reports">отчеты</string>
 </resources>

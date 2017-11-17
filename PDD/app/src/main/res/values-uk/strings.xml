@@ -17,4 +17,7 @@
     <string name="activity_signup_button_back">&lt;</string>
     <string name="activity_singup_dialog_button_ok">Ок</string>
     <string name="activity_signup_dialog_message_name">Введить iм\'я та Побатьковi</string>
+    <string name="activity_main_button_courses">курси</string>
+    <string name="activity_main_button_exam">тестування</string>
+    <string name="activity_main_button_reports"></string>
 </resources>
