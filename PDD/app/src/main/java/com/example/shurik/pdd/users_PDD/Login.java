@@ -113,11 +113,15 @@ import java.util.List;
 
     }
 
+    public void setRemember(boolean remember) {
+        this.remember = remember;
+    }
+
     private UserPDD findUser(String login){
 
 
         for (UserPDD user: listUsers) {
-            if (user.getLogin() == login)
+            if (user.getLogin().equals(login))
                 return user;
 
         }

@@ -38,7 +38,8 @@ public class CourseObjectAdapter extends BaseAdapter{
     @Override
     public long getItemId(int position) {
 
-        return listCourses.get(position).getId();
+        //return listCourses.get(position).getId();
+        return position;
     }
 
     @Override

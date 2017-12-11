@@ -84,8 +84,10 @@ public class LoginActivity extends AppCompatActivity{
                     if (login.signin(loginStr, passwordStr)){
                         //TODO успешно авторизовались
 
+                        login.setCurrentUser(loginStr);
+
                         if (checkBox.isChecked())
-                            login.setCurrentUser(loginStr);
+                            login.setRemember(true);
 
                         login.saveUsers();
 

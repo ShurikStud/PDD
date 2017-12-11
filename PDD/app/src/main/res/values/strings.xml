@@ -31,17 +31,18 @@
     <string name="activity_main_button_exam">exam</string>
     <string name="activity_main_button_reports">reports</string>
     <string-array name="courses_array">
-        <item>1;Курс 1</item>
-        <item>2;Курс 2</item>
-        <item>3;Курс 3</item>
-        <item>4;Курс 4</item>
-        <item>5;Курс 5</item>
-        <item>6;Курс 6</item>
-        <item>7;Курс 7</item>
-        <item>8;Курс 8</item>
-        <item>9;Курс 9</item>
-        <item>10;Курс 10</item>
-        <item>11;Курс 11</item>
+        <item>1~Курс 1~Описание курса 1</item>
+        <item>2~Курс 2~Описание курса 2</item>
+        <item>3~Курс 3~Описание курса 3</item>
+        <item>4~Курс 4~Описание курса 4</item>
+        <item>5~Курс 5~Описание курса 5</item>
+        <item>6~Курс 6~Описание курса 6</item>
+        <item>7~Курс 7~Описание курса 7</item>
+        <item>8~Курс 8~Описание курса 8</item>
+        <item>9~Курс 9~Описание курса 9</item>
+        <item>10~Курс 10~Описание курса 10</item>
+        <item>11~Курс 11~Описание курса 11</item>
     </string-array>
-
+    <string name="fragment_course_detail_text_view_head">course description</string>
+    
 </resources>

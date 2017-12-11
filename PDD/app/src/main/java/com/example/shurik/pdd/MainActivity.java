@@ -35,8 +35,10 @@ public class MainActivity extends AppCompatActivity {
 
         activity    = this;
 
-        Resources resources = activity.getResources();
-        listCourseObject    = new CourseObjectList(resources.getStringArray(R.array.courses_array));
+        listCourseObject    = CourseObjectList.getInstance(activity);
+
+//        Resources resources = activity.getResources();
+//        listCourseObject    = new CourseObjectList(resources.getStringArray(R.array.courses_array));
 
 
         login   = Login.getInstance();

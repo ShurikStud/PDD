@@ -27,4 +27,5 @@
     <string name="activity_main_button_courses">курсы</string>
     <string name="activity_main_button_exam">тест</string>
     <string name="activity_main_button_reports">отчеты</string>
+    <string name="fragment_course_detail_text_view_head">Описание курса</string>
 </resources>
