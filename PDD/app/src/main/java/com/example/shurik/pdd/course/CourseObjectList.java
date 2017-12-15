@@ -2,6 +2,7 @@ package com.example.shurik.pdd.course;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.support.annotation.Nullable;
 
 import com.example.shurik.pdd.R;
 
@@ -30,8 +31,8 @@ public final class CourseObjectList {
         String name     = "";
         String detail   = "";
 
-        int index_from  =0;
-        int index_to    =0;
+        int index_from  = 0;
+        int index_to    = 0;
 
         for (String course: coursesArray) {
             index_from  = 0;
@@ -45,11 +46,7 @@ public final class CourseObjectList {
             detail    = course.substring(index_from, index_to);
             listCourseObjects.add(new CourseObject(Integer.parseInt(id), name, detail));
         }
-
-
-
-
-    }
+  }
 
     public static CourseObjectList getInstance(Context context){
 
@@ -95,6 +92,7 @@ public final class CourseObjectList {
         }
     }
 
+    @Nullable
     public CourseObject getCurrentCourse(){
 
         if (currentIndex == -1){
@@ -102,7 +100,5 @@ public final class CourseObjectList {
         } else {
             return listCourseObjects.get(currentIndex);
         }
-
-
     }
 }

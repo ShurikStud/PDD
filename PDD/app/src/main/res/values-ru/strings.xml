@@ -28,4 +28,5 @@
     <string name="activity_main_button_exam">тест</string>
     <string name="activity_main_button_reports">отчеты</string>
     <string name="fragment_course_detail_text_view_head">Описание курса</string>
+    <string name="activity_test_button_ok">Тест окончен</string>
 </resources>

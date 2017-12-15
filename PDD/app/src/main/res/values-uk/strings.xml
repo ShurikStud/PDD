@@ -21,4 +21,5 @@
     <string name="activity_main_button_exam">тестування</string>
     <string name="activity_main_button_reports"></string>
     <string name="fragment_course_detail_text_view_head">Розповiдь про курс</string>
+    <string name="activity_test_button_ok">Тест закiнчен</string>
 </resources>

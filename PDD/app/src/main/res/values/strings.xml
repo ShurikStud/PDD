@@ -43,6 +43,62 @@
         <item>10~Курс 10~Описание курса 10</item>
         <item>11~Курс 11~Описание курса 11</item>
     </string-array>
+
+    <string-array name="tests_array">
+        <item>На какой сигнал светофора можно начитать движение на перекрестке?</item>
+        <item>Дорожной обстановкой считается совокупность факторов, характеризующихся:</item>
+        <item>С какой максимальной скоростью разрешается движение мотоциклисту в этом населенном пункте после проезда знака на синем фоне?</item>
+        <item>При каких технических неисправностях запрещается эксплуатация транспортных средств?</item>
+    </string-array>
+
+    <string-array name="answer0_array">
+        <item>На желтый</item>
+        <item>На красный</item>
+        <item>На зеленый</item>
+        <item>На любой</item>
+    </string-array>
+
+    <integer-array name="answer0_true_array">
+        <item>2</item>
+    </integer-array>
+
+    <string-array name="answer1_array">
+        <item>Только дорожными условиями.</item>
+        <item>Только наличием препятствий на определенном участке дороги.</item>
+        <item>Только интенсивностью и уровнем организации дорожного движения.</item>
+    </string-array>
+
+    <integer-array name="answer1_true_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </integer-array>
+
+    <string-array name="answer2_array">
+        <item>60 км/ч</item>
+        <item>70 км/ч</item>
+        <item>80 км/ч</item>
+        <item>90 км/ч</item>
+        <item>110 км/ч</item>
+    </string-array>
+
+    <integer-array name="answer2_true_array">
+        <item>3</item>
+    </integer-array>
+
+    <string-array name="answer3_array">
+        <item>Только не работает манометр пневматического тормозного привода.</item>
+        <item>Только неисправен усилитель рулевого управления.</item>
+        <item>Только суммарный люфт в рулевом управлении составляет 25 градусов.</item>
+    </string-array>
+
+    <integer-array name="answer3_true_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </integer-array>
+
     <string name="fragment_course_detail_text_view_head">course description</string>
-    
+    <string name="activity_test_button_ok">test complite</string>
+
 </resources>

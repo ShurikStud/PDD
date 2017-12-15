@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.shurik.pdd.course.CourseObjectList;
+import com.example.shurik.pdd.test.TestObjectList;
 import com.example.shurik.pdd.users_PDD.Login;
 import com.example.shurik.pdd.users_PDD.UserPDD;
 
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Login login;
 
     private CourseObjectList listCourseObject;
+    private TestObjectList testObjectList;
 
     private MyListener  myListener;
 
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         activity    = this;
 
         listCourseObject    = CourseObjectList.getInstance(activity);
+        testObjectList      = TestObjectList.getInstance(activity);
 
 //        Resources resources = activity.getResources();
 //        listCourseObject    = new CourseObjectList(resources.getStringArray(R.array.courses_array));
@@ -75,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
                 case R.id.activity_main_button_exam:
+
+                    startActivity(new Intent(activity, TestActivity.class));
 
                     break;
 
