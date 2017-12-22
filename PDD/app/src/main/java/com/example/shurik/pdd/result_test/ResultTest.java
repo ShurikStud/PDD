@@ -25,5 +25,6 @@ public class ResultTest {
     }
 
     List<TestAndAnswers> testObjectList; // список вопросов в этом конкретном тесте
+    boolean isComplete = false;
 
 }

@@ -1,5 +1,7 @@
 package com.example.shurik.pdd.users_PDD;
 
+import com.example.shurik.pdd.result_test.ResultTestAdapter;
+
 /**
  * Created by shurik on 11.11.2017.
  */
@@ -10,6 +12,7 @@ public class UserPDD {
     private String name;
     private String login;
     private String password;
+    private ResultTestAdapter resultTestAdapter;
 
 //    public UserPDD(int id, String name, String login, String password) {
     public UserPDD(String name, String login, String password) {
@@ -17,6 +20,8 @@ public class UserPDD {
         this.name = name;
         this.login = login;
         this.password = password;
+
+        resultTestAdapter   = new ResultTestAdapter(this);
     }
 
     public String getLogin() {

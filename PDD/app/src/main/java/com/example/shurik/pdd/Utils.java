@@ -108,4 +108,11 @@ public class Utils {
         return login;
     }
 
+    public static void updateCurrentUser(Context context, UserPDD userPDD){
+
+        SharedPreferences sharedPreferences = context.getSharedPreferences(USER_PDD_ENTITY, Context.MODE_PRIVATE);
+        Gson gson   = new Gson();
+
+        updateUserPDD(sharedPreferences.edit(), gson, userPDD);
+    }
 }

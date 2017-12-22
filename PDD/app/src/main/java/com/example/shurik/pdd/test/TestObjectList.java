@@ -7,12 +7,15 @@ import com.example.shurik.pdd.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by shurik on 11.12.2017.
  */
 
 public class TestObjectList {
+
+    private static final int COUNT_QUESTIONS = 4; // количество вопросов в тесте
 
     static TestObjectList instance = null;
 
@@ -94,6 +97,29 @@ public class TestObjectList {
         } else {
             return listTestObjects.get(currentIndex);
         }
+    }
+
+    public List<TestObject> generateNewTestList(){ // генерирование списка вопросов для очередного тестирования
+
+        List<TestObject> testObjectList = new ArrayList<TestObject>();
+        Random random = new Random();
+
+        int i = 0;
+        int indexTest   = -1;
+
+        while (i < COUNT_QUESTIONS){
+
+            indexTest   = random.nextInt(listTestObjects.size() - 1);
+            TestObject nextTest = listTestObjects.get(indexTest);
+            if (testObjectList.indexOf(nextTest) == -1){
+                i++;
+                testObjectList.add(nextTest);
+            }
+
+        }
+
+        return testObjectList;
+
     }
 
 }

@@ -54,6 +54,7 @@ import java.util.List;
         if (newUser == null) {
 
             newUser = new UserPDD(name, login, password);
+
             listUsers.add(newUser);
 
         } else {
