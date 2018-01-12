@@ -22,4 +22,10 @@
     <string name="activity_main_button_reports"></string>
     <string name="fragment_course_detail_text_view_head">Розповiдь про курс</string>
     <string name="activity_test_button_ok">Тест закiнчен</string>
+    <string name="test_activity_not_complete">Не на всi питання э вiдповiдi.</string>
+    <string name="activity_result_exam_text_view_finish">Поздравляем, вы окончили экзамен со следующими результатами:</string>
+    <string name="activity_result_exam_text_view_count_questions">кiлькiсть запитань:</string>
+    <string name="activity_result_exam_text_view_count_true_answers">кiлькiсть вiрних вiдповiдей:</string>
+    <string name="activity_result_exam_text_view_percent_true_answers">% вiрних вiдповiдей:</string>
+    <string name="activity_result_exam_button_close">закрыть</string>
 </resources>

@@ -69,9 +69,9 @@
     </string-array>
 
     <integer-array name="answer1_true_array">
+        <item>0</item>
         <item>1</item>
         <item>2</item>
-        <item>3</item>
     </integer-array>
 
     <string-array name="answer2_array">
@@ -83,7 +83,7 @@
     </string-array>
 
     <integer-array name="answer2_true_array">
-        <item>3</item>
+        <item>2</item>
     </integer-array>
 
     <string-array name="answer3_array">
@@ -93,12 +93,18 @@
     </string-array>
 
     <integer-array name="answer3_true_array">
+        <item>0</item>
         <item>1</item>
         <item>2</item>
-        <item>3</item>
     </integer-array>
 
     <string name="fragment_course_detail_text_view_head">course description</string>
     <string name="activity_test_button_ok">test complite</string>
+    <string name="test_activity_not_complete">not all</string>
+    <string name="activity_result_exam_text_view_finish">Congratulation.</string>
+    <string name="activity_result_exam_text_view_count_questions">count question:</string>
+    <string name="activity_result_exam_text_view_count_true_answers">count true answers:</string>
+    <string name="activity_result_exam_text_view_percent_true_answers">% true answers:</string>
+    <string name="activity_result_exam_button_close">close</string>
 
 </resources>

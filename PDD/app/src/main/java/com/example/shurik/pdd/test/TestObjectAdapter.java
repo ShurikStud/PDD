@@ -9,7 +9,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.shurik.pdd.test_fragment.TestObjectFragment;
+import com.example.shurik.pdd.exam.Exam;
+import com.example.shurik.pdd.exam.ExamFragment;
 
 import java.util.List;
 
@@ -63,6 +64,7 @@ public class TestObjectAdapter extends FragmentPagerAdapter{
 
     //private TestObjectList testObjectList;
     List<TestObject> listTests;
+    Exam    exam;
     //Context context;
 
 
@@ -74,21 +76,37 @@ public class TestObjectAdapter extends FragmentPagerAdapter{
 
     @Override
     public Fragment getItem(int position) {
-
-        return (TestObjectFragment.newInstance(position));
+        return ExamFragment.newInstance(position);
     }
 
     @Override
+//    public int getCount() {
+//        //return listTests.size();
+//        if (!(listTests == null)){
+//            return listTests.size();
+//        } else {
+//            return 0;
+//        }
+//    }
+//    public int getCount() {
+//        //return listTests.size();
+//        if (!(listResultTests == null)){
+//            return listResultTests.size();
+//        } else {
+//            return 0;
+//        }
+//    }
+
     public int getCount() {
         //return listTests.size();
-        if (!(listTests == null)){
-            return listTests.size();
+        if (!(exam == null)){
+            return exam.size();
         } else {
             return 0;
         }
     }
 
-    public void setListTests(List<TestObject> listTests){
-        this.listTests  = listTests;
+    public void setExam(Exam exam){
+        this.exam  = exam;
     }
 }

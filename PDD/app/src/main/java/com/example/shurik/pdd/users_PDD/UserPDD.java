@@ -1,6 +1,11 @@
 package com.example.shurik.pdd.users_PDD;
 
-import com.example.shurik.pdd.result_test.ResultTestAdapter;
+import com.example.shurik.pdd.exam.Exam;
+import com.example.shurik.pdd.exam.Exams;
+import com.example.shurik.pdd.test.TestObject;
+import com.example.shurik.pdd.test.TestObjectList;
+
+import java.util.ArrayList;
 
 /**
  * Created by shurik on 11.11.2017.
@@ -12,7 +17,8 @@ public class UserPDD {
     private String name;
     private String login;
     private String password;
-    private ResultTestAdapter resultTestAdapter;
+
+    private Exams   exams; // результаты экзаменов и сервисные функции
 
 //    public UserPDD(int id, String name, String login, String password) {
     public UserPDD(String name, String login, String password) {
@@ -21,7 +27,7 @@ public class UserPDD {
         this.login = login;
         this.password = password;
 
-        resultTestAdapter   = new ResultTestAdapter(this);
+        this.exams  = new Exams();
     }
 
     public String getLogin() {
@@ -45,6 +51,26 @@ public class UserPDD {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public boolean existCurrentExam(){
+
+        if (exams.getCurrentExam() == null){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public void startNewExam(TestObjectList testObjectList){
+        ArrayList<TestObject> testObjectArrayList = (ArrayList<TestObject>) testObjectList.generateNewTestList();
+        exams.startNewExam(testObjectArrayList);
+    }
+
+    public Exam getCurrentExam(){
+        return exams.getCurrentExam();
+    }
+
+    public void completeCurrentExam(){exams.completeCurrentExam();}
 
     @Override
     public String toString() {

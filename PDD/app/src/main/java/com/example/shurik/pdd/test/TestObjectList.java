@@ -15,7 +15,7 @@ import java.util.Random;
 
 public class TestObjectList {
 
-    private static final int COUNT_QUESTIONS = 4; // количество вопросов в тесте
+    private static final int COUNT_QUESTIONS = 3; // количество вопросов в тесте
 
     static TestObjectList instance = null;
 
@@ -102,22 +102,35 @@ public class TestObjectList {
     public List<TestObject> generateNewTestList(){ // генерирование списка вопросов для очередного тестирования
 
         List<TestObject> testObjectList = new ArrayList<TestObject>();
+
         Random random = new Random();
 
         int i = 0;
         int indexTest   = -1;
 
+        TestObject testObject   = null;
+
         while (i < COUNT_QUESTIONS){
 
-            indexTest   = random.nextInt(listTestObjects.size() - 1);
-            TestObject nextTest = listTestObjects.get(indexTest);
-            if (testObjectList.indexOf(nextTest) == -1){
+            indexTest   = random.nextInt(listTestObjects.size());
+
+            testObject   = listTestObjects.get(indexTest);
+
+            if (! testObjectList.contains(testObject)){
+
+                testObjectList.add(testObject);
                 i++;
-                testObjectList.add(nextTest);
+
             }
 
+//            if (!(resultTest.isTestExist(indexTest))){
+//                TestObject nextTest = listTestObjects.get(indexTest);
+//                resultTest.addQuestion(indexTest, nextTest.getVariantCount());
+//                i++;
+//            }
         }
 
+        //return resultTest;
         return testObjectList;
 
     }

@@ -29,4 +29,10 @@
     <string name="activity_main_button_reports">отчеты</string>
     <string name="fragment_course_detail_text_view_head">Описание курса</string>
     <string name="activity_test_button_ok">Тест окончен</string>
+    <string name="test_activity_not_complete">Не на все вопросы указаныы ответы! Экзамен завершить нельзя.</string>
+    <string name="activity_result_exam_text_view_finish">Поздравляем, вы окончили экзамен со следующими результатами:</string>
+    <string name="activity_result_exam_text_view_count_questions">количество вопросов:</string>
+    <string name="activity_result_exam_text_view_count_true_answers">количество верных ответов:</string>
+    <string name="activity_result_exam_text_view_percent_true_answers">% верных ответов:</string>
+    <string name="activity_result_exam_button_close">закрыть</string>
 </resources>

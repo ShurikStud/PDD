@@ -79,6 +79,19 @@ public class MainActivity extends AppCompatActivity {
 
                 case R.id.activity_main_button_exam:
 
+                    UserPDD currentUser = login.getCurrentUser(); // получим текущего пользователя.
+                    // теперь сгенерим ему список вопросов
+
+                    //Utils.updateCurrentUser(getBaseContext(), currentUser);
+
+                    if (currentUser.existCurrentExam()){
+                        //TODO необходимо реализовать диалог в котором спрашивать - продолжить экзамен или начать новый.
+                        // а пока продолжим начатый. для этого ничего делать не нужно
+                        // currentUser.startNewExam(testObjectList);
+                    } else {
+                        currentUser.startNewExam(testObjectList);
+                    }
+
                     startActivity(new Intent(activity, TestActivity.class));
 
                     break;
@@ -86,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.activity_main_button_reports:
 
                     break;
-
 
             }
 

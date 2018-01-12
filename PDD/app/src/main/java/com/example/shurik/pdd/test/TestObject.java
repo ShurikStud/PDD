@@ -52,7 +52,7 @@ public class TestObject {
     }
 
     public int getVariantCount(){
-        // возвращает количество вариантов ответов вопроса
+        // возвращает количество вариантов ответов на вопрос
 
         if (!(variants == null)){
             return variants.size();
@@ -67,6 +67,16 @@ public class TestObject {
             return variants.get(position).value;
         }else{
             return "";
+        }
+
+    }
+
+    public boolean isTrueAllAnswers(List<Integer> answers){
+
+        if ( (answers.containsAll(true_variants)) && (true_variants.containsAll(answers)) ){
+            return true;
+        } else {
+            return false;
         }
 
     }
