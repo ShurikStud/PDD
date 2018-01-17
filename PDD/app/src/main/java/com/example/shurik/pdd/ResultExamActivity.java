@@ -46,7 +46,7 @@ public class ResultExamActivity extends AppCompatActivity implements View.OnClic
 
         textViewCountQuestions.setText(Integer.toString(count_questions));
         textViewCountTrueAnswers.setText(Integer.toString(count_true_answers));
-        textViewPercentTrueAnswers.setText(Integer.toString(count_true_answers / count_questions * 100) + "%");
+        textViewPercentTrueAnswers.setText(Integer.toString(100 * count_true_answers / count_questions) + "%");
 
     }
 

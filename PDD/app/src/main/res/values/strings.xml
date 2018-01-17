@@ -49,6 +49,7 @@
         <item>Дорожной обстановкой считается совокупность факторов, характеризующихся:</item>
         <item>С какой максимальной скоростью разрешается движение мотоциклисту в этом населенном пункте после проезда знака на синем фоне?</item>
         <item>При каких технических неисправностях запрещается эксплуатация транспортных средств?</item>
+        <item>С какой максимальной скоростью разрешается движение водителю легкового автомобиля после проезда перекрестка?</item>
     </string-array>
 
     <string-array name="answer0_array">
@@ -96,6 +97,18 @@
         <item>0</item>
         <item>1</item>
         <item>2</item>
+    </integer-array>
+
+    <string-array name="answer4_array">
+        <item>60 км/ч</item>
+        <item>70 км/ч</item>
+        <item>80 км/ч</item>
+        <item>90 км/ч</item>
+        <item>С любой скоростью, обеспечивающей безопасность дорожного движения.</item>
+    </string-array>
+
+    <integer-array name="answer4_true_array">
+        <item>3</item>
     </integer-array>
 
     <string name="fragment_course_detail_text_view_head">course description</string>
