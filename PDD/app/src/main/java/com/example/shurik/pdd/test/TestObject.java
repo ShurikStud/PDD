@@ -81,5 +81,9 @@ public class TestObject {
 
     }
 
+    public String getImagePath(){
+        return "@drawable/test" + id;
+    }
+
 }
 

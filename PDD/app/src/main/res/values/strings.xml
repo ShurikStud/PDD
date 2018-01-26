@@ -46,10 +46,21 @@
 
     <string-array name="tests_array">
         <item>На какой сигнал светофора можно начитать движение на перекрестке?</item>
-        <item>Дорожной обстановкой считается совокупность факторов, характеризующихся:</item>
-        <item>С какой максимальной скоростью разрешается движение мотоциклисту в этом населенном пункте после проезда знака на синем фоне?</item>
-        <item>При каких технических неисправностях запрещается эксплуатация транспортных средств?</item>
         <item>С какой максимальной скоростью разрешается движение водителю легкового автомобиля после проезда перекрестка?</item>
+        <item>С какой максимальной скоростью разрешается движение мотоцикла на автомагистрали, если его водитель имеет водительский стаж 3 года?</item>
+        <item>С какой максимальной скоростью разрешается движение легковому автомобилю в населенном пункте, обозначенном этим знаком?</item>
+        <item>Водителю какого транспортного средства разрешается движение со скоростью 90 км/ч на этом участке дороги?</item>
+        <item>Водитель какого транспортного средства не нарушает Правила, двигаясь со скоростью 20 км/ч?</item>
+        <item>В этом случае максимальная скорость движения грузового автомобиля не должна превышать:</item>
+        <item>С какой максимальной скоростью разрешается продолжить движение водителю легкового автомобиля после проезда этого дорожного знака?</item>
+        <item>С какой максимальной скоростью разрешается движение водителю грузового автомобиля на этом участке дороги?</item>
+        <item>С какой максимальной скоростью разрешается буксировка механическим транспортным средством?</item>
+        <item>Водители каких транспортных средств нарушают Правила, двигаясь со скоростью 90 км/ч?</item>
+        <item>С какой максимальной скоростью разрешается движение, водителю микроавтобуса в этом случае?</item>
+        <item>Разрешается ли водителю автобуса междугородного сообщения двигаться со скоростью более 90 км/ч на этом участке дороги?</item>
+        <item>На каком участке дороги водителю мотоцикла запрещается движение со скоростью 80 км/ч?</item>
+        <item>С какой скоростью разрешается движение грузового автомобиля на этом участке дороги?</item>
+        <item>Водителю какого транспортного средства разрешается превышать установленные Правилами ограничения скорости движения?</item>
     </string-array>
 
     <string-array name="answer0_array">
@@ -64,51 +75,176 @@
     </integer-array>
 
     <string-array name="answer1_array">
-        <item>Только дорожными условиями.</item>
-        <item>Только наличием препятствий на определенном участке дороги.</item>
-        <item>Только интенсивностью и уровнем организации дорожного движения.</item>
+        <item>60 км/ч.</item>
+        <item>70 км/ч.</item>
+        <item>80 км/ч.</item>
+        <item>90 км/ч.</item>
+        <item>С любой скоростью, обеспечивающей безопасность дорожного движения.</item>
+
     </string-array>
 
     <integer-array name="answer1_true_array">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
+        <item>3</item>
     </integer-array>
 
     <string-array name="answer2_array">
-        <item>60 км/ч</item>
         <item>70 км/ч</item>
         <item>80 км/ч</item>
         <item>90 км/ч</item>
         <item>110 км/ч</item>
+        <item>130 км/ч</item>
     </string-array>
 
     <integer-array name="answer2_true_array">
-        <item>2</item>
+        <item>1</item>
     </integer-array>
 
     <string-array name="answer3_array">
-        <item>Только не работает манометр пневматического тормозного привода.</item>
-        <item>Только неисправен усилитель рулевого управления.</item>
-        <item>Только суммарный люфт в рулевом управлении составляет 25 градусов.</item>
+        <item>20 км/ч.</item>
+        <item>40 км/ч.</item>
+        <item>60 км/ч.</item>
+        <item>90 км/ч.</item>
+
     </string-array>
 
     <integer-array name="answer3_true_array">
-        <item>0</item>
-        <item>1</item>
         <item>2</item>
     </integer-array>
 
     <string-array name="answer4_array">
-        <item>60 км/ч</item>
-        <item>70 км/ч</item>
-        <item>80 км/ч</item>
-        <item>90 км/ч</item>
-        <item>С любой скоростью, обеспечивающей безопасность дорожного движения.</item>
+        <item>Мотоцикла.</item>
+        <item>Микроавтобуса.</item>
+        <item>Обоим разрешается.</item>
+        <item>Обоим запрещается.</item>
     </string-array>
 
     <integer-array name="answer4_true_array">
+        <item>1</item>
+    </integer-array>
+
+    <string-array name="answer5_array">
+        <item>Только автомобиля, обслуживающего предприятие связи.</item>
+        <item>Только автомобиля дорожной службы.</item>
+        <item>Оба нарушают.</item>
+        <item>Оба не нарушают.</item>
+    </string-array>
+
+    <integer-array name="answer5_true_array">
         <item>3</item>
+    </integer-array>
+
+    <string-array name="answer6_array">
+        <item>60 км/ч.</item>
+        <item>70 км/ч.</item>
+        <item>80 км/ч.</item>
+        <item>90 км/ч.</item>
+        <item>100 км/ч.</item>
+
+    </string-array>
+
+    <integer-array name="answer6_true_array">
+        <item>0</item>
+    </integer-array>
+
+    <string-array name="answer7_array">
+        <item>60 км/ч.</item>
+        <item>70 км/ч.</item>
+        <item>80 км/ч.</item>
+        <item>90 км/ч.</item>
+        <item>100 км/ч.</item>
+    </string-array>
+
+    <integer-array name="answer7_true_array">
+        <item>3</item>
+    </integer-array>
+
+    <string-array name="answer8_array">
+        <item>70 км/ч.</item>
+        <item>90 км/ч.</item>
+        <item>100 км/ч.</item>
+
+    </string-array>
+
+    <integer-array name="answer8_true_array">
+        <item>0</item>
+    </integer-array>
+
+    <string-array name="answer9_array">
+        <item>30 км/ч.</item>
+        <item>40 км/ч.</item>
+        <item>50 км/ч.</item>
+        <item>60 км/ч.</item>
+        <item>70 км/ч.</item>
+
+    </string-array>
+
+    <integer-array name="answer9_true_array">
+        <item>2</item>
+    </integer-array>
+
+    <string-array name="answer10_array">
+        <item>Только микроавтобуса.</item>
+        <item>Только мотоцикла с боковым прицепом.</item>
+        <item>Обоих мотоциклов.</item>
+        <item>Микроавтобуса и мотоцикла без бокового прицепа.</item>
+
+    </string-array>
+
+    <integer-array name="answer10_true_array">
+        <item>2</item>
+    </integer-array>
+
+    <string-array name="answer11_array">
+        <item>80 км/ч.</item>
+        <item>70 км/ч.</item>
+        <item>60 км/ч.</item>
+        <item>С любой скоростью.</item>
+
+    </string-array>
+
+    <integer-array name="answer11_true_array">
+        <item>2</item>
+    </integer-array>
+
+    <string-array name="answer12_array">
+        <item>Разрешается.</item>
+        <item>Запрещается.</item>
+
+    </string-array>
+
+    <integer-array name="answer12_true_array">
+        <item>1</item>
+    </integer-array>
+
+    <string-array name="answer13_array">
+        <item>Только на "Б".</item>
+        <item>Только на "А".</item>
+        <item>На "А" и "Б".</item>
+
+    </string-array>
+
+    <integer-array name="answer13_true_array">
+        <item>2</item>
+    </integer-array>
+
+    <string-array name="answer14_array">
+        <item>Только не более 50 км/ч.</item>
+        <item>Только 50 км/ч.</item>
+        <item>Не более 90 км/ч.</item>
+    </string-array>
+
+    <integer-array name="answer14_true_array">
+        <item>2</item>
+    </integer-array>
+
+    <string-array name="answer15_array">
+        <item>Только водителю автомобиля скорой медицинской помощи.</item>
+        <item>Только водителю автомобиля дорожной службы.</item>
+        <item>Водителям обоих транспортных средств.</item>
+    </string-array>
+
+    <integer-array name="answer15_true_array">
+        <item>0</item>
     </integer-array>
 
     <string name="fragment_course_detail_text_view_head">course description</string>

@@ -15,7 +15,7 @@ import java.util.Random;
 
 public class TestObjectList {
 
-    private static final int COUNT_QUESTIONS = 3; // количество вопросов в тесте
+    private static final int COUNT_QUESTIONS = 5; // количество вопросов в тесте
 
     static TestObjectList instance = null;
 

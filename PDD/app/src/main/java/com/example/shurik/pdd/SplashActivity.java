@@ -24,6 +24,7 @@ public class SplashActivity extends AppCompatActivity{
 
         Thread logoThread   = new Thread(){
 
+
             public void run(){
 
                 try {
