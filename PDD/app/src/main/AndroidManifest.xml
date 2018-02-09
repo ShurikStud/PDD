@@ -42,6 +42,11 @@
         <activity android:name=".ResultExamActivity">
 
         </activity>
+        
+        <activity android:name=".GraphActivity">
+
+        </activity>
+
     </application>
 
 </manifest>

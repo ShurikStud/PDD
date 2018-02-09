@@ -101,7 +101,9 @@ public class ExamFragment extends Fragment {
 
         // сформируем чекбоксы для ответов
 
-        ListView listView   = (ListView) view.findViewById(R.id.fragment_test_list_view);
+//        ListView listView   = (ListView) view.findViewById(R.id.fragment_test_list_view);
+
+        //LinearLayout linearLayoutScroll = (LinearLayout) view.findViewById(R.id.fragment_test_linear_layout_scroll);
 
         for (int i = 0; i < exam.getQuestion(currentPosition).getVariantCount(); i++) {
 
@@ -116,7 +118,7 @@ public class ExamFragment extends Fragment {
             checkBoxVariant.setOnClickListener(myListener);
 
             linearLayout.addView(checkBoxVariant);
-            listView.addView(checkBoxVariant);
+            //linearLayoutScroll.addView(checkBoxVariant);
 
             arrayCheckBox.add(checkBoxVariant);
 

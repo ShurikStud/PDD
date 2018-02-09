@@ -66,6 +66,7 @@ public class Utils {
 
         String json = gson.toJson(userPDD);
         editor.putString(USER_PREFIX + userPDD.getLogin(), json);
+        editor.commit();
 
     }
 

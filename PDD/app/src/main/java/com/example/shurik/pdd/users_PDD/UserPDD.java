@@ -72,6 +72,12 @@ public class UserPDD {
 
     public void completeCurrentExam(){exams.completeCurrentExam();}
 
+    public ArrayList<Exam> getCompleteExams(){
+
+        return exams.getCompleteExams();
+
+    }
+
     @Override
     public String toString() {
 //        return "UserPDD{" +

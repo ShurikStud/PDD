@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<declare-styleable name="GraphPDD">
+    <attr name="countX" format="integer"></attr>
+    <attr name="countY" format="integer"></attr>
+    <attr name="colorBackground" format="color"></attr>
+</declare-styleable>
+</resources>

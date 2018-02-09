@@ -76,6 +76,8 @@ public class TestActivity extends AppCompatActivity {
                 // если на все вопросы были проставлены ответы, то пометим экзамен выполненым и очистим текущий экзамен
                 userPDD.completeCurrentExam();
 
+                Utils.updateCurrentUser(getBaseContext(), userPDD);
+
                 Intent newIntent    = new Intent(activity, ResultExamActivity.class);
                 newIntent.putExtra("count_questions", exam.getCountQuestions());
                 newIntent.putExtra("count_true_answers", exam.getCountTrueQuestions());

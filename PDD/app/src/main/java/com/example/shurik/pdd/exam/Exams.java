@@ -34,4 +34,21 @@ public class Exams {
         current_exam    = null;
     }
 
+    public ArrayList<Exam> getCompleteExams(){
+
+        ArrayList<Exam> result = new ArrayList<Exam>();
+
+
+        for (Exam exam: arrayExam) {
+
+            if (exam.isComplete()) {
+                result.add(exam);
+            }
+
+        }
+
+        return result;
+
+    }
+
 }
