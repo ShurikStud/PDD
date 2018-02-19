@@ -5,16 +5,15 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.ListPopupWindow;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import com.example.shurik.pdd.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,6 +21,9 @@ import java.util.List;
  */
 
 public class GraphPDD extends View {
+
+    private static final int ORIGIN_X   = 10;
+    private static final int ORIGIN_Y   = 90;
 
     private Context context;
 
@@ -33,6 +35,8 @@ public class GraphPDD extends View {
 
     private Paint paintAxes;
     private Paint paintAxesArrow;
+    private Paint paintLine;
+    private Paint paintDot;
     private Paint paintText;
 
 //    private List<Point> pointListAxisX;
@@ -70,6 +74,16 @@ public class GraphPDD extends View {
         paintAxesArrow.setColor(Color.BLUE);
         paintAxesArrow.setStrokeWidth(6);
 
+        paintLine   = new Paint();
+        paintLine.setStyle(Paint.Style.STROKE);
+        paintLine.setColor(Color.GREEN);
+        paintLine.setStrokeWidth(6);
+
+        paintDot  = new Paint();
+        paintDot.setStyle(Paint.Style.FILL_AND_STROKE);
+        paintDot.setColor(Color.RED);
+        paintDot.setStrokeWidth(5);
+
         paintText   = new Paint();
         paintText.setTextSize(40);
         paintText.setColor(Color.DKGRAY);
@@ -92,62 +106,81 @@ public class GraphPDD extends View {
         drawGraph(canvas);
     }
 
+    private int toCoordinateX(int value){
+
+        if ( (value < 1) || (value > countX) ){
+            return -1;
+        } else {
+            return ORIGIN_X + value * stepX;
+        }
+
+    }
+
+    private int toCoordinateY(int value){
+
+        if ( (value < 1) || (value > countY) ){
+            return -1;
+        } else {
+            return ORIGIN_Y - value * stepY;
+        }
+
+    }
+
     public void setPointList(ArrayList<Point> pointList){
         for(Point point: pointList){
 
             // преобразуем координаты в пиксели
 
-            this.pointList.add(new Point(point.getX() * stepX, point.getY() * stepY));
+            this.pointList.add(new Point(toCoordinateX(point.getX()), toCoordinateY(point.getY()), point.getDate()));
 
         }
     }
 
-    private float toCoordinateX(int coord){
+    private float toPixelX(int coord){
         return coord * scaleX;
     }
 
-    private float toCoordinateY(int coord){
+    private float toPixelY(int coord){
         return coord * scaleY;
     }
 
     public void setCountX(int countX) {
         this.countX = countX;
+        stepX = 75 / (countX + 1); // +1 для того, чтобы выводить график по центру
     }
 
     public void setCountY(int countY) {
         this.countY = countY;
+        stepY = 75 / countY;
     }
 
     private void drawAxes(Canvas canvas){
 
         //TODO вывод координатных осей
 
-        canvas.drawLine(toCoordinateX(10), toCoordinateY(90), toCoordinateX(90), toCoordinateY(90), paintAxes);
-        canvas.drawLine(toCoordinateX(87), toCoordinateY(88), toCoordinateX(90), toCoordinateY(90), paintAxesArrow);
-        canvas.drawLine(toCoordinateX(87), toCoordinateY(92), toCoordinateX(90), toCoordinateY(90), paintAxesArrow);
+        canvas.drawLine(toPixelX(ORIGIN_X), toPixelY(ORIGIN_Y), toPixelX(ORIGIN_Y), toPixelY(ORIGIN_Y), paintAxes);
+        canvas.drawLine(toPixelX(ORIGIN_Y - 3), toPixelY(ORIGIN_Y - 2), toPixelX(ORIGIN_Y), toPixelY(ORIGIN_Y), paintAxesArrow);
+        canvas.drawLine(toPixelX(ORIGIN_Y - 3), toPixelY(ORIGIN_Y + 2), toPixelX(ORIGIN_Y), toPixelY(ORIGIN_Y), paintAxesArrow);
 
-        canvas.drawLine(toCoordinateX(10), toCoordinateY(90), toCoordinateX(10), toCoordinateY(10), paintAxes);
-        canvas.drawLine(toCoordinateX(8), toCoordinateY(13), toCoordinateX(10), toCoordinateY(10), paintAxes);
-        canvas.drawLine(toCoordinateX(12), toCoordinateY(13), toCoordinateX(10), toCoordinateY(10), paintAxes);
+        canvas.drawLine(toPixelX(ORIGIN_X), toPixelY(ORIGIN_Y), toPixelX(ORIGIN_X), toPixelY(ORIGIN_X), paintAxes);
+        canvas.drawLine(toPixelX(ORIGIN_X - 2), toPixelY(ORIGIN_X  + 3), toPixelX(ORIGIN_X), toPixelY(ORIGIN_X), paintAxes);
+        canvas.drawLine(toPixelX(ORIGIN_X + 2), toPixelY(ORIGIN_X + 3), toPixelX(ORIGIN_X), toPixelY(ORIGIN_X), paintAxes);
 
         if ( (countX <= 0) || (countY <= 0) ) {
 
-            canvas.drawText("ERROR::не установлены границы координат", toCoordinateX(2), toCoordinateY(50), paintText);
+            canvas.drawText("ERROR::не установлены границы координат", toPixelX(2), toPixelY(50), paintText);
 
         } else {
             // нарисуем координатную сетку
 
-            stepX = 75 / (countX + 1); // +1 для того, чтобы выводить график по центру
-            stepY = 75 / countY;
-
-            for (int i = 10; i <= 75 + 10; i += stepX){
-                canvas.drawLine(toCoordinateX(i), toCoordinateY(88), toCoordinateX(i), toCoordinateY(92), paintAxesArrow);
+            for (int i = ORIGIN_X; i <= 75 + ORIGIN_X; i += stepX){
+                canvas.drawLine(toPixelX(i), toPixelY(ORIGIN_Y - 2), toPixelX(i), toPixelY(ORIGIN_Y + 2), paintAxesArrow);
             }
 
             int counter = 0;
-            for (int i = 90; i >= 90 - 75; i -= stepY){
-                canvas.drawLine(toCoordinateX(8), toCoordinateY(i), toCoordinateX(12), toCoordinateY(i), paintAxesArrow);
-                canvas.drawText(Integer.toString(counter), toCoordinateX(3), toCoordinateY(i), paintText);
+            for (int i = ORIGIN_Y; i >= ORIGIN_Y - 75; i -= stepY){
+                canvas.drawLine(toPixelX(ORIGIN_X - 2), toPixelY(i), toPixelX(ORIGIN_X + 2), toPixelY(i), paintAxesArrow);
+                canvas.drawText(Integer.toString(counter), toPixelX(ORIGIN_X - 7), toPixelY(i), paintText);
                 counter++;
             }
 
@@ -165,15 +198,48 @@ public class GraphPDD extends View {
 
         //TODO вывод графика
 
-        for(Point point:pointList){
-
-            canvas.drawLine(toCoordinateX(10), toCoordinateY(10), toCoordinateX(point.getX()), toCoordinateY(
-                    point.getY()), paintAxesArrow);
+        for (int i = 0; i < pointList.size(); i++){
+            if (i == 0){
+                canvas.drawLine(toPixelX(pointList.get(i).getX())
+                        , toPixelY(pointList.get(i).getY())
+                        , toPixelX(pointList.get(i).getX())
+                        , toPixelY(pointList.get(i).getY())
+                        , paintLine);
+            } else {
+                canvas.drawLine(toPixelX(pointList.get(i-1).getX())
+                        , toPixelY(pointList.get(i-1).getY())
+                        , toPixelX(pointList.get(i).getX())
+                        , toPixelY(pointList.get(i).getY())
+                        , paintLine);
+            }
 
         }
 
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+        Date currentDate;
+        String text = "";
+
+        for(int i = 0; i < pointList.size(); i++){
+
+            canvas.drawCircle(toPixelX(pointList.get(i).getX())
+                    , toPixelY(pointList.get(i).getY())
+                    , 6, paintDot);
+
+            currentDate = pointList.get(i).getDate();
+            if (currentDate == null) {
+                text = "";
+            } else {
+                text = sdf.format(currentDate);
+            }
+
+            if ( (i % 2) == 0 ) {
+                canvas.drawText(text, toPixelX(pointList.get(i).getX() - 8), toPixelY(pointList.get(i).getY() - 1), paintText);
+            } else {
+                canvas.drawText(text, toPixelX(pointList.get(i).getX() - 8), toPixelY(pointList.get(i).getY() - 3), paintText);
+            }
+
+        }
 
     }
-
 
 }

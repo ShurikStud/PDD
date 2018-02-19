@@ -30,7 +30,7 @@ public class GraphActivity extends AppCompatActivity {
 
         graphPDD = (GraphPDD) findViewById(R.id.activity_graph_graphPDD);
 
-        graphPDD.setCountX(5);
+        graphPDD.setCountX(1);
         graphPDD.setCountY(5);
 
         UserPDD userPDD = Login.getInstance().getCurrentUser();
@@ -41,7 +41,7 @@ public class GraphActivity extends AppCompatActivity {
 
         int x = 1;
         for (Exam exam: completeExams){
-            pointArrayList.add(new Point(x, exam.getCountTrueQuestions()));
+            pointArrayList.add(new Point(x, exam.getCountTrueQuestions(), exam.getDate()));
             x++;
         }
 
@@ -49,14 +49,6 @@ public class GraphActivity extends AppCompatActivity {
 
         graphPDD.invalidate();
 
-        Button button = (Button) findViewById(R.id.activity_graph_button);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //graphPDD.fresh();
-            }
-        });
 
     }
 }

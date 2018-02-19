@@ -24,21 +24,21 @@ public class Utils {
     private static final String USER_PREFIX = "USER_";
 
 
-    public static void saveUsersPDD(Context context, List<UserPDD> listUsersPDD, boolean remember, UserPDD currentUser){
+    public static void saveUsersPDD(Context context, List<UserPDD> listUsersPDD, boolean remember, UserPDD currentUser) {
 
         // инициализируем общие объекты для сохранения настроек
         SharedPreferences sharedPreferences = context.getSharedPreferences(USER_PDD_ENTITY, Context.MODE_PRIVATE);
-        SharedPreferences.Editor    editor  = sharedPreferences.edit();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        Gson gson   = new Gson();
+        Gson gson = new Gson();
 
         // создадим массив с логинами всех пользователей
         // и сохраним в файле
-        String [] users = new String[listUsersPDD.size()];
+        String[] users = new String[listUsersPDD.size()];
 
         int iter = 0;
-        for (UserPDD userPDD: (ArrayList<UserPDD>) listUsersPDD) {
-            users[iter++]  = userPDD.getLogin();
+        for (UserPDD userPDD : (ArrayList<UserPDD>) listUsersPDD) {
+            users[iter++] = userPDD.getLogin();
             updateUserPDD(editor, gson, userPDD);
         }
 
@@ -48,11 +48,11 @@ public class Utils {
 
         if (remember == true) {
 
-            json    = gson.toJson(currentUser.getLogin());
+            json = gson.toJson(currentUser.getLogin());
 
         } else {
 
-            json    = gson.toJson("");
+            json = gson.toJson("");
 
         }
 
@@ -62,7 +62,7 @@ public class Utils {
 
     }
 
-    private static final void updateUserPDD(SharedPreferences.Editor editor, Gson gson, UserPDD userPDD){
+    private static final void updateUserPDD(SharedPreferences.Editor editor, Gson gson, UserPDD userPDD) {
 
         String json = gson.toJson(userPDD);
         editor.putString(USER_PREFIX + userPDD.getLogin(), json);
@@ -70,19 +70,19 @@ public class Utils {
 
     }
 
-    public static List<UserPDD> loadUsersPDD(Context context){
+    public static List<UserPDD> loadUsersPDD(Context context) {
 
         ArrayList<UserPDD> result = new ArrayList<UserPDD>();
 
         SharedPreferences sharedPreferences = context.getSharedPreferences(USER_PDD_ENTITY, Context.MODE_PRIVATE);
-        Gson gson   = new Gson();
+        Gson gson = new Gson();
 
         String json = sharedPreferences.getString(USERLIST, "");
 
         String[] users = null;
 
-        if ( !json.isEmpty())
-            users =  gson.fromJson(json, String[].class);
+        if (!json.isEmpty())
+            users = gson.fromJson(json, String[].class);
 
         if (!(users == null)) {
             for (String login : users) {
@@ -94,25 +94,25 @@ public class Utils {
         return result;
     }
 
-    public static String loadCurrentUser(Context context){
+    public static String loadCurrentUser(Context context) {
 
         SharedPreferences sharedPreferences = context.getSharedPreferences(USER_PDD_ENTITY, Context.MODE_PRIVATE);
-        Gson gson   = new Gson();
+        Gson gson = new Gson();
 
         String json = sharedPreferences.getString(USER_PDD_REMEMBER, "");
 
-        String login    = "";
+        String login = "";
 
         if (!json.isEmpty())
-            login   = gson.fromJson(json, String.class);
+            login = gson.fromJson(json, String.class);
 
         return login;
     }
 
-    public static void updateCurrentUser(Context context, UserPDD userPDD){
+    public static void updateCurrentUser(Context context, UserPDD userPDD) {
 
         SharedPreferences sharedPreferences = context.getSharedPreferences(USER_PDD_ENTITY, Context.MODE_PRIVATE);
-        Gson gson   = new Gson();
+        Gson gson = new Gson();
 
         updateUserPDD(sharedPreferences.edit(), gson, userPDD);
     }

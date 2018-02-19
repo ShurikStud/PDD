@@ -3,6 +3,8 @@ package com.example.shurik.pdd.exam;
 import com.example.shurik.pdd.test.TestObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -16,6 +18,8 @@ public class Exam {
 
     private int countQuestions;
     private int countTrueQuestions;
+
+    private Date date = null;
 
     public Exam(List<TestObject> testObjectList) {
 
@@ -71,6 +75,12 @@ public class Exam {
             }
         }
 
+        if (complete){
+            this.date = (Date) Calendar.getInstance().getTime();
+        } else {
+            this.date = null;
+        }
+
         this.complete = complete;
     }
 
@@ -91,5 +101,9 @@ public class Exam {
 
     public int getCountTrueQuestions() {
         return countTrueQuestions;
+    }
+
+    public Date getDate() {
+        return date;
     }
 }

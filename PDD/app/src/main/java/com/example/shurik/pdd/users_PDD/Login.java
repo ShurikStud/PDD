@@ -9,7 +9,9 @@ import java.util.List;
 /**
  * Created by shurik on 13.11.2017.
  */
- public final class Login {
+public final class Login {
+
+    private static final String ADMIN_LOGIN = "admin";
 
     static Login instance = null;
 
@@ -18,9 +20,11 @@ import java.util.List;
     private boolean remember = false;
     Context context;
 
-    private Login(){ Init();} // конструктор делаем приватным - невозможно будет вызвать
+    private Login() {
+        Init();
+    } // конструктор делаем приватным - невозможно будет вызвать
 
-    public static Login getInstance(){
+    public static Login getInstance() {
 
         if (instance == null)
             instance = new Login();
@@ -28,23 +32,23 @@ import java.util.List;
         return instance;
     }
 
-    public void setContext(Context context){
+    public void setContext(Context context) {
         this.context = context;
     }
 
-    public void loadUsers(){
+    public void loadUsers() {
 
         listUsers = Utils.loadUsersPDD(context);
         setCurrentUser(Utils.loadCurrentUser(context));
 
     }
 
-    public void addUser(String name, String login, String password){
+    public void addUser(String name, String login, String password) {
 
         UserPDD newUser = null;
-        for (UserPDD user: listUsers ) {
+        for (UserPDD user : listUsers) {
 
-            if(user.getLogin().equals(login)){
+            if (user.getLogin().equals(login)) {
                 newUser = user;
                 break;
             }
@@ -69,17 +73,17 @@ import java.util.List;
 
     }
 
-    public void saveUsers(){
+    public void saveUsers() {
 
         Utils.saveUsersPDD(context, listUsers, remember, currentUser);
 
     }
 
-    public boolean signin(String login, String password){
+    public boolean signin(String login, String password) {
 
-        for (UserPDD user: listUsers) {
+        for (UserPDD user : listUsers) {
 
-            if (user.getLogin().equals(login) && user.getPassword().equals(password)){
+            if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
                 currentUser = user;
                 return true;
             }
@@ -89,7 +93,7 @@ import java.util.List;
         return false;
     }
 
-    private void Init(){
+    private void Init() {
         //TODO необходимо написать инициацию ранее залогиненого пользователя. Сейчвс сделаю заглушку
 
 //        idUser  = 75646;
@@ -99,15 +103,15 @@ import java.util.List;
 
     }
 
-    public UserPDD getCurrentUser(){
+    public UserPDD getCurrentUser() {
 
         return currentUser;
 
     }
 
-    public void setCurrentUser(String login){
+    public void setCurrentUser(String login) {
 
-        UserPDD user    = findUser(login);
+        UserPDD user = findUser(login);
 
         if (!(user == null))
             currentUser = user;
@@ -118,10 +122,9 @@ import java.util.List;
         this.remember = remember;
     }
 
-    private UserPDD findUser(String login){
+    private UserPDD findUser(String login) {
 
-
-        for (UserPDD user: listUsers) {
+        for (UserPDD user : listUsers) {
             if (user.getLogin().equals(login))
                 return user;
 
@@ -131,4 +134,11 @@ import java.util.List;
 
     }
 
+    public boolean isAdmin() {
+        if (currentUser != null) {
+            return currentUser.getLogin().equals(ADMIN_LOGIN);
+        } else {
+            return false;
+        }
+    }
 }

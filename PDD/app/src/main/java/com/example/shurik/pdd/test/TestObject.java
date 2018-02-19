@@ -37,7 +37,7 @@ public class TestObject {
     }
 
     public void addVariant(int id, String variant){
-        if (!(variant == null))
+        if (variant != null)
             variants.add(new Question(id, variant));
     }
 
