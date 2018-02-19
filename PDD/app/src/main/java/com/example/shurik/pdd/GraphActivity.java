@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import com.example.shurik.pdd.exam.Exam;
 import com.example.shurik.pdd.graphPDD.GraphPDD;
@@ -23,17 +25,33 @@ public class GraphActivity extends AppCompatActivity {
 
     private GraphPDD graphPDD;
 
+    private LinearLayout linearLayoutUsers;
+    private ListView listViewUsers;
+    private boolean isAdmin = false;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph);
 
         graphPDD = (GraphPDD) findViewById(R.id.activity_graph_graphPDD);
+        linearLayoutUsers = (LinearLayout) findViewById(R.id.activity_graph_linear_layout_users);
+        listViewUsers = (ListView) findViewById(R.id.activity_graph_list_view);
 
         graphPDD.setCountX(1);
         graphPDD.setCountY(5);
 
         UserPDD userPDD = Login.getInstance().getCurrentUser();
+        isAdmin = Login.getInstance().isAdmin();
+
+        if (isAdmin) {
+            linearLayoutUsers.setVisibility(View.VISIBLE);
+        } else {
+            linearLayoutUsers.setVisibility(View.GONE);
+        }
+
+
+
         ArrayList<Exam> completeExams = userPDD.getCompleteExams();
         graphPDD.setCountX(completeExams.size());
 

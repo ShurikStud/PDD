@@ -141,4 +141,17 @@ public final class Login {
             return false;
         }
     }
+
+    public int size(){
+        return listUsers.size();
+    }
+
+    public UserPDD getUser(int id){
+        if ( (id < 0) || (id >= listUsers.size()) ){
+            return null;
+        }else {
+            return listUsers.get(id);
+        }
+    }
+
 }
